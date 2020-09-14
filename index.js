@@ -64,12 +64,12 @@ const parseWebView = async (click) => {
         }
         // console.log('news length -', html.length);
         //write file with json formate
-        fs.writeFile('medusa.json', JSON.stringify({html}), function (err) {
+        fs.writeFile('./json/medusa.json', JSON.stringify({html}), function (err) {
             if (err) throw err
             console.log('Saved file medusa.json');
         })
         //result and exit for browser
-        await page.screenshot({ path: 'example.png' });
+        await page.screenshot({ path: './screenshot/example.png' });
         await browser.close();
     } catch (error) {
         console.log(error);
